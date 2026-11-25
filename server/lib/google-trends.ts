@@ -111,7 +111,6 @@ export async function fetchGoogleTrendingTopics(): Promise<TrendingTopic[]> {
   const xml = await res.text();
 
   // Each <item> is a trending topic; nested <ht:news_item> are related articles
-  const NS = "ht";
   const items = xml.split(/<item[^>]*>/i).slice(1);
 
   const data: TrendingTopic[] = items.map(block => {

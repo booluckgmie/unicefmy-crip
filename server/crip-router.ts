@@ -2,7 +2,7 @@
 import { eq, desc, asc, and } from "drizzle-orm";
 import { createRouter, publicQuery, adminQuery } from "./middleware";
 import { getDb } from "./queries/connection";
-import * as schema from "@db/schema";
+import * as schema from "../db/schema";
 import { fetchBingNewsFeed, buildNewsTrend } from "./lib/bing-news";
 import { fetchGoogleTrends30d, fetchGoogleTrendingTopics } from "./lib/google-trends";
 import { fetchGoogleAlertsFeeds } from "./lib/google-alerts";

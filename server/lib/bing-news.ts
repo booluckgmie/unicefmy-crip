@@ -111,7 +111,7 @@ async function fetchViaAPI(apiKey: string): Promise<FeedItem[]> {
       url.searchParams.set("safeSearch", "Moderate"); url.searchParams.set("textDecorations", "false");
       const res = await fetch(url.toString(), { headers: { "Ocp-Apim-Subscription-Key": apiKey } });
       if (!res.ok) continue;
-      const json: BingResponse = await res.json();
+      const json = (await res.json()) as BingResponse;
       for (const r of json.value ?? []) {
         if (!seen.has(r.url)) { seen.add(r.url); all.push(r); }
       }
