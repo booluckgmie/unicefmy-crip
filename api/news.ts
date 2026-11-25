@@ -2,8 +2,8 @@
  * Vercel Function: GET /api/news?type=bing|alerts|all
  * Port of netlify/functions/news.ts, reusing the shared feed fetchers.
  */
-import { fetchBingNewsFeed } from "../server/lib/bing-news";
-import { fetchGoogleAlertsFeeds } from "../server/lib/google-alerts";
+import { fetchBingNewsFeed } from "../server/lib/bing-news.js";
+import { fetchGoogleAlertsFeeds } from "../server/lib/google-alerts.js";
 
 export async function GET(request: Request) {
   const type = new URL(request.url).searchParams.get("type") ?? "all";

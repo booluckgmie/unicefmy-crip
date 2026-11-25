@@ -1,11 +1,11 @@
 ﻿import { z } from "zod";
 import { eq, desc, asc, and } from "drizzle-orm";
-import { createRouter, publicQuery, adminQuery } from "./middleware";
-import { getDb } from "./queries/connection";
-import * as schema from "../db/schema";
-import { fetchBingNewsFeed, buildNewsTrend } from "./lib/bing-news";
-import { fetchGoogleTrends30d, fetchGoogleTrendingTopics } from "./lib/google-trends";
-import { fetchGoogleAlertsFeeds } from "./lib/google-alerts";
+import { createRouter, publicQuery, adminQuery } from "./middleware.js";
+import { getDb } from "./queries/connection.js";
+import * as schema from "../db/schema.js";
+import { fetchBingNewsFeed, buildNewsTrend } from "./lib/bing-news.js";
+import { fetchGoogleTrends30d, fetchGoogleTrendingTopics } from "./lib/google-trends.js";
+import { fetchGoogleAlertsFeeds } from "./lib/google-alerts.js";
 
 export const cripRouter = createRouter({
   // ── Key Metrics ───────────────────────────────────────────────
